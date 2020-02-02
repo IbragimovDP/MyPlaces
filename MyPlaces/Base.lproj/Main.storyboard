@@ -22,7 +22,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="85"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="RHT-op-nhD">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="RHT-op-nhD">
                                             <rect key="frame" x="15" y="10" width="65" height="65"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="65" id="3PP-di-hca"/>
@@ -75,6 +75,7 @@
                                     </connections>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="imageOfPlace" destination="RHT-op-nhD" id="J8d-pn-1GA"/>
                                     <outlet property="locationLabel" destination="y18-Jy-y1w" id="Mtn-Gy-jXD"/>
                                     <outlet property="nameLabel" destination="QCx-zB-7PI" id="obt-Q3-Z9C"/>
                                     <outlet property="typeLabel" destination="bhg-Xa-tIR" id="zFX-Zg-mgb"/>
