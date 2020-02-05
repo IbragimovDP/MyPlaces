@@ -16,4 +16,5 @@ class CustomTableViewCell: UITableViewCell {
     @IBOutlet var typeLabel: UILabel!
     
 
+    
 }
