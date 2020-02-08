@@ -7,10 +7,10 @@
 //
 
 import UIKit
+import RealmSwift
 
 class NewPlaceTableViewController: UITableViewController {
     
-    var newPlace: Place?
     var imageIsChanged = false
     
     @IBOutlet var saveButton: UIBarButtonItem!
@@ -24,7 +24,6 @@ class NewPlaceTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        
         tableView.tableFooterView = UIView()
         
         saveButton.isEnabled = false
@@ -69,7 +68,7 @@ class NewPlaceTableViewController: UITableViewController {
     }
     
     func saveNewPlace() {
-        
+                
         var image: UIImage?
         
         if imageIsChanged {
@@ -77,8 +76,9 @@ class NewPlaceTableViewController: UITableViewController {
         } else {
             image = #imageLiteral(resourceName: "imagePlaceholder")
         }
+        let newPlace = Place(name: placeName.text!, location: placeLocation.text, type: placeType.text, imageData: image?.pngData())
         
-        newPlace = Place(name: placeName.text!, location: placeLocation.text, type: placeType.text, image: image, restaurantImage: nil)
+        StorageManager.saveObject(newPlace)
     }
     
     @IBAction func cancelAction(_ sender: Any) {
